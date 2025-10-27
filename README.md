@@ -11,6 +11,7 @@ A simple project to get started with VueJS front-end framework.
     - v-once
     - v-bind
     - v-show
+    - v-if
 - [ ] Styles in Vue
 - [ ] Events in Vue
 - [ ] Data binding

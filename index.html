@@ -12,6 +12,7 @@
 			<p>{{ employee.name }} is {{ employee.age }} years old.</p>
 			<p>His current salary is 2,800 (BRL).</p>
 			<p v-show="employee.hasCorporateCard">Spending Limit for Card: {{ employee.spendingLimit }}</p>
+			<p v-if="employee.hasCorporateCard">Spending Limit for Card: {{ employee.spendingLimit }}</p>
 			<a v-bind:href="portfolioLink">{{ employee.name }}'s portfolio link</a>
 		</div>
 
