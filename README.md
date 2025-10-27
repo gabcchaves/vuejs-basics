@@ -6,7 +6,7 @@ A simple project to get started with VueJS front-end framework.
 - [x] Reactivity in Vue
     - ref
     - reactive
-- [ ] Directives in Vue
+- [x] Directives in Vue
     - v-html
     - v-once
     - v-bind
@@ -15,7 +15,7 @@ A simple project to get started with VueJS front-end framework.
     - v-else
     - v-else-if
     - v-for
-- [ ] Styles in Vue
+- [x] Styles in Vue
 - [ ] Events in Vue
 - [ ] Data binding
 - [ ] Forms
