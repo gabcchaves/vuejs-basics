@@ -8,9 +8,10 @@
 	</head>
 	<body>
 		<div id="app">
-			<button v-on:click="buttonClick($event)">Clique Aqui</button>
-			<p>X: {{x}}</p>
-			<p>Y: {{y}}</p>
+			<div v-on:click="buttonClick('Você clicou na Div')">
+				<span>Div</span><br>
+				<button v-on:click.stop="buttonClick('Você clicou no botão')">Botão</button>
+			</div>
 		</div>
 
 		<script>
@@ -21,10 +22,10 @@
 					let x = ref(0);
 					let y = ref(0);
 
-					function buttonClick(event) {
-						x.value = event.x;
-						y.value = event.y;
+					function buttonClick(message) {
+						alert(message);
 					}
+
 					return {
 						buttonClick,
 						x,
