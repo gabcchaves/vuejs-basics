@@ -10,6 +10,8 @@
 		<div id="app">
 			<h1>{{ message }}</h1>
 			<p>Lucky Number: {{ luckyNumber }}</p>
+			<p>Lucky Numbers Array: {{ luckyNumbers }}</p>
+			<p>{{ employee.name }} is {{ employee.age }} years old.</p>
 		</div>
 
 		<script>
@@ -20,10 +22,17 @@
 
 					const message = "Hello Vue 3!";
 					const luckyNumber = 7;
+					const luckyNumbers = [3, 7, 9];
+					const employee = {
+						name: "Gabriel",
+						age: 23
+					};
 
 					return {
 						message,
 						luckyNumber,
+						luckyNumbers,
+						employee,
 					};
 				},
 			}).mount("#app");
