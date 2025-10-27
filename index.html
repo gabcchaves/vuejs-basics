@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="app">
-			<button v-on:click="buttonClick">Click Me</button>
+			<button v-on:click="buttonClick('Olá!')">Clique Aqui</button>
 		</div>
 
 		<script>
@@ -16,8 +16,8 @@
 
 			createApp({
 				setup() {
-					function buttonClick() {
-						alert("Button Clicked.");
+					function buttonClick(message) {
+						alert(message);
 					}
 					return {
 						buttonClick,
