@@ -8,6 +8,7 @@ A simple project to get started with VueJS front-end framework.
     - reactive
 - [ ] Directives in Vue
     - v-html
+    - v-once
 - [ ] Styles in Vue
 - [ ] Events in Vue
 - [ ] Data binding
