@@ -11,11 +11,12 @@
 			<div>
 				<strong>{{ counter }}</strong>
 			</div>
+			<button v-on:click="counter++">Incrementar</button>
+			<button v-on:click="counter--">Decrementar</button>
 			<div>
 				<strong>{{ getName }}</strong>
 			</div>
-			<button v-on:click="counter++">Incrementar</button>
-			<button v-on:click="counter--">Decrementar</button>
+			<input type="text" v-model="name">
 		</div>
 
 		<script>
@@ -26,14 +27,18 @@
 					let counter = ref(0);
 					let name = ref("Name");
 					
-					const getName = computed(() => {
-						console.log("getName() foi invocado.");
+					const getName = computed((previous) => {
+						console.log("previous: ", previous);
+						if (previous == "Name") {
+							console.log("Something");
+						}
 						return name.value;
 					});
 
 					return {
 						counter,
 						getName,
+						name,
 					};
 				},
 			}).mount("#app");
