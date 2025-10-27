@@ -14,6 +14,7 @@ A simple project to get started with VueJS front-end framework.
     - v-if
     - v-else
     - v-else-if
+    - v-for
 - [ ] Styles in Vue
 - [ ] Events in Vue
 - [ ] Data binding
