@@ -8,18 +8,9 @@
 	</head>
 	<body>
 		<div id="app">
-			<h1 v-html="getUppercaseMessage('Hello Vue!')"></h1>
-			<p>{{ employee.name }} is {{ employee.age }} years old.</p>
-			<p>His current salary is {{employee.salary}} (BRL).</p>
-			<p>Iterating through an array:</p>
-			<p v-for="(number, index) in luckyNumbers">
-				[{{index}}]: {{ number }}
-			</p>
-
-			<strong>Showing key and values of an object with v-for:</strong>
-			<p v-for="(value, key) in employee">
-				<span>{{key}}: {{value}}</span>
-			</p>
+			<span v-bind:class="{title: isMainTitle()}">Title</span>
+			<br>
+			<span v-bind:style="styleCaption">Caption</span>
 		</div>
 
 		<script>
@@ -27,55 +18,26 @@
 
 			createApp({
 				setup() {
-
-					const message = "Hello Vue 3!";
-					const luckyNumber = 7;
-					const luckyNumbers = [3, 7, 9];
-					const employee = reactive({
-						name: "Gabriel",
-						age: 23,
-						salary: 2800,
-						hasCorporateCard: false,
-						spendingLimit: 3500
+					const styleCaption = reactive({
+						"font-weight": "bold",
+						"font-size": "2rem",
 					});
-					const portfolioLink = "https://gabcchaves.github.io";
-					let randomLuckyNumber = ref(0);
-
-					function getUppercaseMessage(message) {
-						return `${message.toUpperCase()}`;
+					function isMainTitle() {
+						return true;
 					}
-
-					function getRandomLuckyNumber() {
-						randomLuckyNumber.value = Math.floor(Math.random()*10) + 1;
-						return randomLuckyNumber.value;
-					}
-
-					function updateLuckyNumber() {
-						setTimeout(() => {
-							randomLuckyNumber.value = Math.floor(Math.random()*10) + 1;
-						}, 1000);
-					}
-
-					function updateEmployee() {
-						setTimeout(() => {
-							employee.age = Math.floor(Math.random()*100) + 1;
-						}, 1000);
-					}
-
 					return {
-						message,
-						luckyNumber,
-						luckyNumbers,
-						employee,
-						getRandomLuckyNumber,
-						getUppercaseMessage,
-						updateLuckyNumber,
-						updateEmployee,
-						portfolioLink,
+						isMainTitle,
+						styleCaption,
 					};
 				},
 			}).mount("#app");
 		</script>
+		<style>
+			.title {
+				font-size: 4rem;
+				font-weight: bold;
+			}
+		</style>
 	</body>
 </html>
 
