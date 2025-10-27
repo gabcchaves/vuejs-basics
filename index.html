@@ -14,6 +14,7 @@
 			<p>{{ employee.name }} is {{ employee.age }} years old.</p>
 			<p>{{ luckyNumber }} is {{ luckyNumber % 2 == 0 ? "even number." : "odd number." }}</p>
 			<p>Random lucky number: {{ getRandomLuckyNumber() }}.</p>
+			<p>{{ updateLuckyNumber() }}</p>
 		</div>
 
 		<script>
@@ -40,6 +41,12 @@
 						return randomLuckyNumber.value;
 					}
 
+					function updateLuckyNumber() {
+						setTimeout(() => {
+							randomLuckyNumber.value = Math.floor(Math.random()*10) + 1;
+						}, 1000);
+					}
+
 					return {
 						message,
 						luckyNumber,
@@ -47,6 +54,7 @@
 						employee,
 						getRandomLuckyNumber,
 						getUppercaseMessage,
+						updateLuckyNumber,
 					};
 				},
 			}).mount("#app");
