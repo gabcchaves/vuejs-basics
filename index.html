@@ -19,7 +19,7 @@
 		</div>
 
 		<script>
-			const { createApp, ref } = Vue;
+			const { createApp, ref, reactive } = Vue;
 
 			createApp({
 				setup() {
@@ -27,7 +27,7 @@
 					const message = "Hello Vue 3!";
 					const luckyNumber = 7;
 					const luckyNumbers = [3, 7, 9];
-					const employee = ref({
+					const employee = reactive({
 						name: "Gabriel",
 						age: 23
 					});
@@ -50,7 +50,7 @@
 
 					function updateEmployee() {
 						setTimeout(() => {
-							employee.value.age = Math.floor(Math.random()*100) + 1;
+							employee.age = Math.floor(Math.random()*100) + 1;
 						}, 1000);
 					}
 
