@@ -9,6 +9,7 @@ A simple project to get started with VueJS front-end framework.
 - [ ] Directives in Vue
     - v-html
     - v-once
+    - v-bind
 - [ ] Styles in Vue
 - [ ] Events in Vue
 - [ ] Data binding
