@@ -8,33 +8,32 @@
 	</head>
 	<body>
 		<div id="app">
-			<div v-on:click.once="buttonClick('Você clicou na Div')">
-				<span>Div</span>
-				<br>
-				<button v-on:click.stop="buttonClick('Você clicou no botão')">Botão</button>
-				<br>
-				<a href="https://fast.com" v-on:click.stop.prevent="buttonClick('Github')">GitHub</a>
-				<br>
-				<input type="text" v-on:click.stop v-on:keyup.enter="buttonClick('Enter pressionado')">
+			<div>
+				<strong>{{ counter }}</strong>
 			</div>
+			<div>
+				<strong>{{ getName }}</strong>
+			</div>
+			<button v-on:click="counter++">Incrementar</button>
+			<button v-on:click="counter--">Decrementar</button>
 		</div>
 
 		<script>
-			const { createApp, ref, reactive } = Vue;
+			const { createApp, ref, reactive, computed } = Vue;
 
 			createApp({
 				setup() {
-					let x = ref(0);
-					let y = ref(0);
-
-					function buttonClick(message) {
-						alert(message);
-					}
+					let counter = ref(0);
+					let name = ref("Name");
+					
+					const getName = computed(() => {
+						console.log("getName() foi invocado.");
+						return name.value;
+					});
 
 					return {
-						buttonClick,
-						x,
-						y,
+						counter,
+						getName,
 					};
 				},
 			}).mount("#app");
