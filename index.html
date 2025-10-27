@@ -13,6 +13,7 @@
 			<p>Lucky Numbers Array: {{ luckyNumbers }}</p>
 			<p>{{ employee.name }} is {{ employee.age }} years old.</p>
 			<p>{{ luckyNumber }} is {{ luckyNumber % 2 == 0 ? "even number." : "odd number." }}
+			<p>Random lucky number: {{ getRandomLuckyNumber() }}</p>
 		</div>
 
 		<script>
@@ -29,11 +30,16 @@
 						age: 23
 					};
 
+					function getRandomLuckyNumber() {
+						return Math.floor(Math.random()*10) + 1;
+					}
+
 					return {
 						message,
 						luckyNumber,
 						luckyNumbers,
 						employee,
+						getRandomLuckyNumber,
 					};
 				},
 			}).mount("#app");
