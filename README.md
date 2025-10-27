@@ -4,7 +4,10 @@ A simple project to get started with VueJS front-end framework.
 ## Topics approached
 - [x] Vue Fundamentals
 - [x] Reactivity in Vue
+    - ref
+    - reactive
 - [ ] Directives in Vue
+    - v-html
 - [ ] Styles in Vue
 - [ ] Events in Vue
 - [ ] Data binding
