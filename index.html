@@ -7,7 +7,21 @@
 		<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 	</head>
 	<body>
-		<div>Hello</div>
+		<div id="vue3Demo">
+			<h1>{{ message }}</h1>
+		</div>
+
+		<script>
+			const { createApp } = Vue;
+
+			createApp({
+				setup() {
+					return {
+						message: "Hello Vue 3!",
+					};
+				},
+			}).mount("#vue3Demo");
+		</script>
 	</body>
 </html>
 
