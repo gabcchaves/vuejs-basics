@@ -8,7 +8,9 @@
 	</head>
 	<body>
 		<div id="app">
-			<button v-on:click="buttonClick('Olá!')">Clique Aqui</button>
+			<button v-on:click="buttonClick($event)">Clique Aqui</button>
+			<p>X: {{x}}</p>
+			<p>Y: {{y}}</p>
 		</div>
 
 		<script>
@@ -16,11 +18,17 @@
 
 			createApp({
 				setup() {
-					function buttonClick(message) {
-						alert(message);
+					let x = ref(0);
+					let y = ref(0);
+
+					function buttonClick(event) {
+						x.value = event.x;
+						y.value = event.y;
 					}
 					return {
 						buttonClick,
+						x,
+						y,
 					};
 				},
 			}).mount("#app");
