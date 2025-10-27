@@ -12,12 +12,12 @@
 			<p>Lucky Number: {{ luckyNumber }}</p>
 			<p>Lucky Numbers Array: {{ luckyNumbers }}</p>
 			<p>{{ employee.name }} is {{ employee.age }} years old.</p>
-			<p>{{ luckyNumber }} is {{ luckyNumber % 2 == 0 ? "even number." : "odd number." }}
-			<p>Random lucky number: {{ getRandomLuckyNumber() }}</p>
+			<p>{{ luckyNumber }} is {{ luckyNumber % 2 == 0 ? "even number." : "odd number." }}</p>
+			<p>Random lucky number: {{ getRandomLuckyNumber() }}.</p>
 		</div>
 
 		<script>
-			const { createApp } = Vue;
+			const { createApp, ref } = Vue;
 
 			createApp({
 				setup() {
@@ -29,13 +29,15 @@
 						name: "Gabriel",
 						age: 23
 					};
+					let randomLuckyNumber = ref(0);
 
 					function getUppercaseMessage(message) {
 						return message.toUpperCase();
 					}
 
 					function getRandomLuckyNumber() {
-						return Math.floor(Math.random()*10) + 1;
+						randomLuckyNumber.value = Math.floor(Math.random()*10) + 1;
+						return randomLuckyNumber.value;
 					}
 
 					return {
