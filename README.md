@@ -1,7 +1,7 @@
 # vuejs-basics
 A simple project to get started with VueJS front-end framework.
 
-## Topics approached
+## Topics approached throughout the commits
 - [x] Vue Fundamentals
 - [x] Reactivity in Vue
     - ref
