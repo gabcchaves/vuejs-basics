@@ -9,8 +9,11 @@
 	<body>
 		<div id="app">
 			<div v-on:click.once="buttonClick('Você clicou na Div')">
-				<span>Div</span><br>
+				<span>Div</span>
+				<br>
 				<button v-on:click.stop="buttonClick('Você clicou no botão')">Botão</button>
+				<br>
+				<a href="https://fast.com" v-on:click.stop.prevent="buttonClick('Github')">GitHub</a>
 			</div>
 		</div>
 
