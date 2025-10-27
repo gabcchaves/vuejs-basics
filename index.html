@@ -10,9 +10,10 @@
 		<div id="app">
 			<h1 v-html="getUppercaseMessage('Hello Vue!')"></h1>
 			<p>{{ employee.name }} is {{ employee.age }} years old.</p>
-			<p>His current salary is 2,800 (BRL).</p>
+			<p>His current salary is {{employee.salary}} (BRL).</p>
 			<p v-if="employee.hasCorporateCard">Spending Limit for Card: {{ employee.spendingLimit }}</p>
-			<p v-else>He does not have a corporate card.</p>
+			<p v-else-if="employee.salary > 2500">He is eligible for a corporate card.</p>
+			<p v-else>He does not have a corporate card, and is not eligible for such.</p>
 			<a v-bind:href="portfolioLink">{{ employee.name }}'s portfolio link</a>
 		</div>
 
@@ -28,6 +29,7 @@
 					const employee = reactive({
 						name: "Gabriel",
 						age: 23,
+						salary: 2800,
 						hasCorporateCard: false,
 						spendingLimit: 3500
 					});

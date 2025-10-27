@@ -13,6 +13,7 @@ A simple project to get started with VueJS front-end framework.
     - v-show
     - v-if
     - v-else
+    - v-else-if
 - [ ] Styles in Vue
 - [ ] Events in Vue
 - [ ] Data binding
