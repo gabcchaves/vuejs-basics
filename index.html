@@ -8,9 +8,7 @@
 	</head>
 	<body>
 		<div id="app">
-			<span v-bind:class="{title: isMainTitle()}">Title</span>
-			<br>
-			<span v-bind:style="styleCaption">Caption</span>
+			<button v-on:click="buttonClick">Click Me</button>
 		</div>
 
 		<script>
@@ -18,26 +16,15 @@
 
 			createApp({
 				setup() {
-					const styleCaption = reactive({
-						"font-weight": "bold",
-						"font-size": "2rem",
-					});
-					function isMainTitle() {
-						return true;
+					function buttonClick() {
+						alert("Button Clicked.");
 					}
 					return {
-						isMainTitle,
-						styleCaption,
+						buttonClick,
 					};
 				},
 			}).mount("#app");
 		</script>
-		<style>
-			.title {
-				font-size: 4rem;
-				font-weight: bold;
-			}
-		</style>
 	</body>
 </html>
 
