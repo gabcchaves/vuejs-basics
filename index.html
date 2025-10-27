@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<div id="app">
-			<h1>{{ message }}</h1>
+			<h1>{{ getUppercaseMessage("Hello Vue!") }}</h1>
 			<p>Lucky Number: {{ luckyNumber }}</p>
 			<p>Lucky Numbers Array: {{ luckyNumbers }}</p>
 			<p>{{ employee.name }} is {{ employee.age }} years old.</p>
@@ -30,6 +30,10 @@
 						age: 23
 					};
 
+					function getUppercaseMessage(message) {
+						return message.toUpperCase();
+					}
+
 					function getRandomLuckyNumber() {
 						return Math.floor(Math.random()*10) + 1;
 					}
@@ -40,6 +44,7 @@
 						luckyNumbers,
 						employee,
 						getRandomLuckyNumber,
+						getUppercaseMessage,
 					};
 				},
 			}).mount("#app");
