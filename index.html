@@ -9,15 +9,10 @@
 	<body>
 		<div id="app">
 			<h1 v-html="getUppercaseMessage('Hello Vue!')"></h1>
-			<p>Lucky Number: {{ luckyNumber }}</p>
-			<p>Lucky Numbers Array: {{ luckyNumbers }}</p>
 			<p>{{ employee.name }} is {{ employee.age }} years old.</p>
+			<p>His current salary is 2,800 (BRL).</p>
+			<p v-show="employee.hasCorporateCard">Spending Limit for Card: {{ employee.spendingLimit }}</p>
 			<a v-bind:href="portfolioLink">{{ employee.name }}'s portfolio link</a>
-			<p>{{ luckyNumber }} is {{ luckyNumber % 2 == 0 ? "even number." : "odd number." }}</p>
-			<p>Random lucky number: {{ getRandomLuckyNumber() }}.</p>
-			<p>{{ updateLuckyNumber() }}</p>
-			<p>{{ updateEmployee() }}</p>
-			<p v-once>Only Once random lucky number: {{ getRandomLuckyNumber() }}.</p>
 		</div>
 
 		<script>
@@ -31,7 +26,9 @@
 					const luckyNumbers = [3, 7, 9];
 					const employee = reactive({
 						name: "Gabriel",
-						age: 23
+						age: 23,
+						hasCorporateCard: false,
+						spendingLimit: 3500
 					});
 					const portfolioLink = "https://gabcchaves.github.io";
 					let randomLuckyNumber = ref(0);

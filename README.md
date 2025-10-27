@@ -10,6 +10,7 @@ A simple project to get started with VueJS front-end framework.
     - v-html
     - v-once
     - v-bind
+    - v-show
 - [ ] Styles in Vue
 - [ ] Events in Vue
 - [ ] Data binding
