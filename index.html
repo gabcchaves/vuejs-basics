@@ -11,8 +11,8 @@
 			<h1 v-html="getUppercaseMessage('Hello Vue!')"></h1>
 			<p>{{ employee.name }} is {{ employee.age }} years old.</p>
 			<p>His current salary is 2,800 (BRL).</p>
-			<p v-show="employee.hasCorporateCard">Spending Limit for Card: {{ employee.spendingLimit }}</p>
 			<p v-if="employee.hasCorporateCard">Spending Limit for Card: {{ employee.spendingLimit }}</p>
+			<p v-else>He does not have a corporate card.</p>
 			<a v-bind:href="portfolioLink">{{ employee.name }}'s portfolio link</a>
 		</div>
 
