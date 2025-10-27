@@ -15,6 +15,7 @@
 			<p>{{ luckyNumber }} is {{ luckyNumber % 2 == 0 ? "even number." : "odd number." }}</p>
 			<p>Random lucky number: {{ getRandomLuckyNumber() }}.</p>
 			<p>{{ updateLuckyNumber() }}</p>
+			<p>{{ updateEmployee() }}</p>
 		</div>
 
 		<script>
@@ -26,10 +27,10 @@
 					const message = "Hello Vue 3!";
 					const luckyNumber = 7;
 					const luckyNumbers = [3, 7, 9];
-					const employee = {
+					const employee = ref({
 						name: "Gabriel",
 						age: 23
-					};
+					});
 					let randomLuckyNumber = ref(0);
 
 					function getUppercaseMessage(message) {
@@ -47,6 +48,12 @@
 						}, 1000);
 					}
 
+					function updateEmployee() {
+						setTimeout(() => {
+							employee.value.age = Math.floor(Math.random()*100) + 1;
+						}, 1000);
+					}
+
 					return {
 						message,
 						luckyNumber,
@@ -55,6 +62,7 @@
 						getRandomLuckyNumber,
 						getUppercaseMessage,
 						updateLuckyNumber,
+						updateEmployee,
 					};
 				},
 			}).mount("#app");
