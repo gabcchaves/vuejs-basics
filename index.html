@@ -15,6 +15,11 @@
 			<p v-for="(number, index) in luckyNumbers">
 				[{{index}}]: {{ number }}
 			</p>
+
+			<strong>Showing key and values of an object with v-for:</strong>
+			<p v-for="(value, key) in employee">
+				<span>{{key}}: {{value}}</span>
+			</p>
 		</div>
 
 		<script>
