@@ -20,6 +20,7 @@ A simple project to get started with VueJS front-end framework.
 - [x] Styles in Vue
 - [x] Events in Vue
 - [ ] Data binding
+    - Watchers
 - [ ] Forms
 - [ ] Create Project
 - [ ] Components
