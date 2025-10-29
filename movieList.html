@@ -33,7 +33,9 @@
 
 					<div class="container">
 						<ul class="list-group">
-							<li class="list-group-item"></li>
+							<li v-for="filme in filmes" class="list-group-item">
+								{{ filme.titulo }} - {{ filme.ano }}
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -52,13 +54,17 @@
 
 		createApp({
 			setup() {
-				let filmes = reactive({
+				let filmes = reactive([
 					{ titulo: "F1", ano: 2000 },
 					{ titulo: "F2", ano: 2001 },
 					{ titulo: "F3", ano: 2002 }
-				});
-			}
-		});
+				]);
+
+				return {
+					filmes,
+				};
+			},
+		}).mount("#app");
 	</script>
 </html>
 
