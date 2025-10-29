@@ -20,13 +20,22 @@
 		</div>
 
 		<script>
-			const { createApp, ref, reactive, computed } = Vue;
+			const {
+				createApp,
+				ref,
+				reactive,
+				computed,
+				watch
+			} = Vue;
 
 			createApp({
 				setup() {
 					let counter = ref(0);
 					let name = ref("Name");
-					
+
+					watch(() => counter.value, (newValue, oldValue) => {
+						console.log(`Valor do contador alterado: ${oldValue} -> ${newValue}`);
+					});
 					const getName = computed((previous) => {
 						console.log("previous: ", previous);
 						if (previous == "Name") {
