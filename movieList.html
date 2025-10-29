@@ -65,7 +65,9 @@
 
 				// Acho que posso usar um watcher para detectar as mudanças da
 				// coleção de filmes.
-				watch(
+
+				// Detectar mudança no buffer de filme.
+				watcher(
 					() => buffer.value,	// getter para variável reativa.
 					(novoValor, velhoValor) => {
 						if (JSON.stringify(novoValor) !== JSON.stringfy(velhoValor)){
@@ -73,7 +75,18 @@
 						} else {
 							alert("O filme já está na lista.");
 						}
-				});
+					}
+				);
+
+				// Detectar mudança na coleção de filmes.
+				watch(
+					() => filmes.value,
+					(novoValor, velhorValor) => {
+						if (!velhoValor.includes(buffer)) {
+							alert("Filme não consta na lista.");
+						}
+					}
+				);
 					
 
 				return {
