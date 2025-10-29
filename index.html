@@ -22,6 +22,10 @@
 				<p>O uso de computed properties sempre implica no retorno de algum valor; além disso, somente operações síncronas são executadas. Já na definição de um watcher, não é necessário retornar valor algum, sendo apenas um procedimento; além disso, a sua operação pode ser assíncrona.</p>
 				<p>Computed properties são gravadas em cache, enquanto watchers não o são.</p>
 			</div>
+			<div>
+				<h2>Propriedades reativas no watcher</h2>
+				<p>Quanto se manipula propriedades reativas em watchers, deve-se utilizar getters para elas, e não suas próprias referências.</p>
+			</div>
 		</div>
 
 		<script>
@@ -38,9 +42,12 @@
 					let counter = ref(0);
 					let name = ref("Name");
 
-					watch(() => counter.value, (newValue, oldValue) => {
+					watch(
+						() => counter.value,		// Isto é o getter de uma propriedade reativa.
+						(newValue, oldValue) => {
 						console.log(`Valor do contador alterado: ${oldValue} -> ${newValue}`);
 					});
+
 					const getName = computed((previous) => {
 						console.log("previous: ", previous);
 						if (previous == "Name") {
