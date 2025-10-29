@@ -17,6 +17,11 @@
 				<strong>{{ getName }}</strong>
 			</div>
 			<input type="text" v-model="name">
+			<div>
+				<h2>Diferença entre watcher e computed property</h2>
+				<p>O uso de computed properties sempre implica no retorno de algum valor; além disso, somente operações síncronas são executadas. Já na definição de um watcher, não é necessário retornar valor algum, sendo apenas um procedimento; além disso, a sua operação pode ser assíncrona.</p>
+				<p>Computed properties são gravadas em cache, enquanto watchers não o são.</p>
+			</div>
 		</div>
 
 		<script>
