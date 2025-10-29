@@ -60,8 +60,25 @@
 					{ titulo: "F3", ano: 2002 }
 				]);
 
+				// Variável auxiliar.
+				let buffer = reactive({ titulo: "", ano: "" });
+
+				// Acho que posso usar um watcher para detectar as mudanças da
+				// coleção de filmes.
+				watch(
+					() => buffer.value,	// getter para variável reativa.
+					(novoValor, velhoValor) => {
+						if (JSON.stringify(novoValor) !== JSON.stringfy(velhoValor)){
+							filmes.value.push(novoValor);
+						} else {
+							alert("O filme já está na lista.");
+						}
+				});
+					
+
 				return {
 					filmes,
+					buffer,
 				};
 			},
 		}).mount("#app");
