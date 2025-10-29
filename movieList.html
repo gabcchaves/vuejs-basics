@@ -40,5 +40,25 @@
 			</div>
 		</div>
 	</body>
+
+	<script>
+		const {
+			createApp,
+			ref,
+			reactive,
+			computed,
+			watch
+		} = Vue;
+
+		createApp({
+			setup() {
+				let filmes = reactive({
+					{ titulo: "F1", ano: 2000 },
+					{ titulo: "F2", ano: 2001 },
+					{ titulo: "F3", ano: 2002 }
+				});
+			}
+		});
+	</script>
 </html>
 
